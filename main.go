@@ -65,6 +65,7 @@ func main() {
 	fmt.Println("flag.NFlag()", flag.NFlag())
 
 	fmt.Println(isFlagPassed("out"))
+	fmt.Printf("%.2f°F is equal to %.2f°C\n", fahr, celsius)
 
 	// Eksempel på enkel logikk
 	if out == "C" && isFlagPassed("F") {
