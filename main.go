@@ -38,14 +38,11 @@ func main() {
 	/**
 	    Her må logikken for flaggene og kall til funksjoner fra conv og funfacts
 	    pakkene implementeres.
-
 	    Det er anbefalt å sette opp en tabell med alle mulige kombinasjoner
 	    av flagg. flag-pakken har funksjoner som man kan bruke for å teste
 	    hvor mange flagg og argumenter er spesifisert på kommandolinje.
-
 	        fmt.Println("len(flag.Args())", len(flag.Args()))
 			    fmt.Println("flag.NFlag()", flag.NFlag())
-
 	    Enkelte kombinasjoner skal ikke være gyldige og da må kontrollstrukturer
 	    brukes for å utelukke ugyldige kombinasjoner:
 	    -F, -C, -K kan ikke brukes samtidig
@@ -65,7 +62,6 @@ func main() {
 	fmt.Println("flag.NFlag()", flag.NFlag())
 
 	fmt.Println(isFlagPassed("out"))
-	fmt.Printf("%.2f°F is equal to %.2f°C\n", fahr, celsius)
 
 	// Eksempel på enkel logikk
 	if out == "C" && isFlagPassed("F") {
