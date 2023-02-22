@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"github.com/mathhaug/funtemps/conv"
 )
 
 // Definerer flag-variablene i hoved-"scope"
@@ -56,10 +58,11 @@ func main() {
 	*/
 
 	// Her er noen eksempler du kan bruke i den manuelle testingen
-	fmt.Println(fahr, out, funfacts)
-
-	fmt.Println("len(flag.Args())", len(flag.Args()))
-	fmt.Println("flag.NFlag()", flag.NFlag())
+	//fmt.Println(fahr, out, funfacts)
+	//fmt.Println(fahr, "er", "C")
+	//fmt.Println(conv.FarhenheitToCelsius(fahr))
+	fmt.Print(fahr, "°F er ")
+	fmt.Println(conv.FarhenheitToCelsius(fahr), "°C")
 
 	fmt.Println(isFlagPassed("out"))
 
@@ -67,7 +70,8 @@ func main() {
 	if out == "C" && isFlagPassed("F") {
 		// Kalle opp funksjonen FahrenheitToCelsius(fahr), som da
 		// skal returnere °C
-		fmt.Println("0°F er -17.78°C")
+		//fmt.Println("0°F er -17.78°C")
+
 	}
 
 }
