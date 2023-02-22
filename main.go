@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"github.com/mathhaug/funtemps/conv"
 )
 
 // Definerer flag-variablene i hoved-"scope"
@@ -45,25 +47,25 @@ func main() {
 	switch out {
 	case "C":
 		if fahr != 0 {
-			celsius = (fahr - 32) * 5 / 9
+			celsius = conv.FahrenheitToCelsius(fahr)
 		} else if kelvin != 0 {
-			celsius = kelvin - 273.15
+			celsius = conv.KelvinToCelsius(kelvin)
 		}
 		fmt.Printf("%.2f%s er %.2f%s\n", fahr, "°F", celsius, "°C")
 	case "F":
 		if celsius != 0 {
-			fahr = celsius*9/5 + 32
+			fahr = conv.CelsiusToFahrenheit(celsius)
 		} else if kelvin != 0 {
-			celsius = kelvin - 273.15
-			fahr = celsius*9/5 + 32
+			celsius = conv.KelvinToCelsius(kelvin)
+			fahr = conv.CelsiusToFahrenheit(celsius)
 		}
 		fmt.Printf("%.2f%s er %.2f%s\n", celsius, "°C", fahr, "°F")
 	case "K":
 		if celsius != 0 {
-			kelvin = celsius + 273.15
+			kelvin = conv.CelsiusToKelvin(celsius)
 		} else if fahr != 0 {
-			celsius = (fahr - 32) * 5 / 9
-			kelvin = celsius + 273.15
+			celsius = conv.FahrenheitToCelsius(fahr)
+			kelvin = conv.CelsiusToKelvin(celsius)
 		}
 		fmt.Printf("%.2f%s er %.2f%s\n", celsius, "°C", kelvin, "K")
 	default:
